@@ -1,5 +1,5 @@
 from decoração import *
-texto(b = "FORCA THE GAME")
+texto(a = 36,b = "FORCA THE GAME",c = 32)
 
 palavra = "LOG"  # PALAVRA QUE VAI SER ADVINHADA
 tentativas = 0  # NÚMERO DE TENTATIVAS (ACERTOS NÃO SÃO CONTABILIZADOS)
@@ -20,8 +20,40 @@ while True:
         if letras in letras_certas:
             palavra_formada += letras
         else:
-            palavra_formada += "*"
+            palavra_formada += " _"
     print(palavra_formada)  # IMPRIME A PALAVRA, "*" É COLOCADO CASO AQUELA LETRA AINDA NÃO TENHA SIDO REVELADA
+    if tentativas == 0:
+        print(''' |------|
+        |
+        |
+        |''')
+    elif tentativas == 1:
+        print(''' |------|
+ O      |
+        |
+        |''')
+    elif tentativas == 2:
+        print(''' |------|
+ O      |
+/|      |
+        |''')
+    elif tentativas == 3:
+        print(''' |------|
+  O     |
+ /|\    |
+        |''')
+    elif tentativas == 4:
+        print(''' |------|
+ O      |
+/|\     |
+/       |''')
+    elif tentativas == 5:
+        print(''' |------|
+ O      |
+/|\     |
+/ \     |''')
+        texto(31,"NÃO FOI DESSA VEZ",31)
+        break
     if palavra_formada == palavra:
         # CASO O USUÁRIO ACERTE A PALAVRA POR COMPLETO É QUEBRADO ENTÃO O LOOP E O JOGO É FINALIZADO.
         texto(32,"PARABÉNS VOCÊ ACERTOU")
