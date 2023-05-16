@@ -1,9 +1,12 @@
-palavra = "log"  # PALAVRA QUE VAI SER ADVINHADA
+from decoração import *
+texto(b = "FORCA THE GAME")
+
+palavra = "LOG"  # PALAVRA QUE VAI SER ADVINHADA
 tentativas = 0  # NÚMERO DE TENTATIVAS (ACERTOS NÃO SÃO CONTABILIZADOS)
 letras_certas = ""  # LETRAS CERTAS DIGITADAS SÃO AUTOMATICAMENTE COLOCADAS AQUI
 while True:
     tentativas += 1
-    letra = str(input("Escolha Uma Letra: "))  # PERGUNTA UMA LETRA PARA SER DIGITADA
+    letra = str(input("Escolha Uma Letra: ").strip().upper())  # PERGUNTA UMA LETRA PARA SER DIGITADA
     if len(letra) > 1:  # CASO O USUÁRIO ESCREVA MAIS DE UM CARACTERE É FEITO NOVAMENTE A PERGUNTA
         print("DIGITE SOMENTE UMA LETRA")
         continue
@@ -21,7 +24,7 @@ while True:
     print(palavra_formada)  # IMPRIME A PALAVRA, "*" É COLOCADO CASO AQUELA LETRA AINDA NÃO TENHA SIDO REVELADA
     if palavra_formada == palavra:
         # CASO O USUÁRIO ACERTE A PALAVRA POR COMPLETO É QUEBRADO ENTÃO O LOOP E O JOGO É FINALIZADO.
-        print("PARABÉNS VOCÊ ACERTOU!")
+        texto(32,"PARABÉNS VOCÊ ACERTOU")
         # VERIFICAÇÃO DO USO DE PLURAL
         if tentativas == 1:
             print(f"\033[31m{tentativas} Erro Foi Registrado\033[m")
