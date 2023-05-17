@@ -8,8 +8,8 @@ letras_erradas = "" # LETRAS ERRADAS SÃO COLOCADAS AQUI
 while True:
     tentativas += 1
     letra = str(input("Escolha Uma Letra: ").strip().upper())  # PERGUNTA UMA LETRA PARA SER DIGITADA
-    if len(letra) > 1 or letra.isdigit():  # CASO O USUÁRIO ESCREVA MAIS DE UM CARACTERE É FEITO NOVAMENTE A PERGUNTA
-        print("\033[31mDIGITE INCORRETA\033[m")
+    if len(letra) > 1 or letra.isdigit() or letra == "":  # CASO O USUÁRIO ESCREVA MAIS DE UM CARACTERE É FEITO NOVAMENTE A PERGUNTA
+        print("\033[31mDIGITAÇÃO INCORRETA\033[m")
         tentativas -= 1
         continue
     if letra in letras_erradas:
