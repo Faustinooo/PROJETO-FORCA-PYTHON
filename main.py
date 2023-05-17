@@ -4,6 +4,7 @@ texto(a = 36,b = "FORCA THE GAME",c = 32)
 palavra = "LOG"  # PALAVRA QUE VAI SER ADVINHADA
 tentativas = 0  # NÚMERO DE TENTATIVAS (ACERTOS NÃO SÃO CONTABILIZADOS)
 letras_certas = ""  # LETRAS CERTAS DIGITADAS SÃO AUTOMATICAMENTE COLOCADAS AQUI
+letras_erradas = "" # LETRAS ERRADAS SÃO COLOCADAS AQUI
 while True:
     tentativas += 1
     letra = str(input("Escolha Uma Letra: ").strip().upper())  # PERGUNTA UMA LETRA PARA SER DIGITADA
@@ -11,7 +12,10 @@ while True:
         print("\033[31mDIGITE INCORRETA\033[m")
         tentativas -= 1
         continue
-
+    if letra in letras_erradas:
+        print(f"\033[31mA LETRA ({letra}) JA FOI DIGITADA\033[m")
+        tentativas -= 1
+        continue
 # MÉTODO QUE ADICIONA AS LETRAS CERTAS A "letras_certas" QUE MAIS PREVIAMENTE É IMPRIMIDA
     if letra in palavra:
         letras_certas += letra
@@ -21,6 +25,7 @@ while True:
         if letras in letras_certas:
             palavra_formada += letras
         else:
+            letras_erradas += letra
             palavra_formada += " _"
     print(palavra_formada)  # IMPRIME A PALAVRA, "*" É COLOCADO CASO AQUELA LETRA AINDA NÃO TENHA SIDO REVELADA
     if tentativas == 0:
