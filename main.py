@@ -7,8 +7,9 @@ letras_certas = ""  # LETRAS CERTAS DIGITADAS SÃO AUTOMATICAMENTE COLOCADAS AQU
 while True:
     tentativas += 1
     letra = str(input("Escolha Uma Letra: ").strip().upper())  # PERGUNTA UMA LETRA PARA SER DIGITADA
-    if len(letra) > 1:  # CASO O USUÁRIO ESCREVA MAIS DE UM CARACTERE É FEITO NOVAMENTE A PERGUNTA
-        print("DIGITE SOMENTE UMA LETRA")
+    if len(letra) > 1 or letra.isdigit():  # CASO O USUÁRIO ESCREVA MAIS DE UM CARACTERE É FEITO NOVAMENTE A PERGUNTA
+        print("\033[31mDIGITE INCORRETA\033[m")
+        tentativas -= 1
         continue
 
 # MÉTODO QUE ADICIONA AS LETRAS CERTAS A "letras_certas" QUE MAIS PREVIAMENTE É IMPRIMIDA
