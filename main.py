@@ -71,4 +71,3 @@ while True:
 
 
         break
-# ERRO REPORTADO, RESOLVENDO
