@@ -41,19 +41,24 @@ while True:
     elif tentativas == 2:
         print(''' |------|
  O      |
+/       |
+        |''')
+    elif tentativas == 2:
+        print(''' |------|
+ O      |
 /|      |
         |''')
-    elif tentativas == 3:
+    elif tentativas == 4:
         print(''' |------|
   O     |
  /|\    |
         |''')
-    elif tentativas == 4:
+    elif tentativas == 5:
         print(''' |------|
  O      |
 /|\     |
 /       |''')
-    elif tentativas == 5:
+    elif tentativas == 6:
         print(''' |------|
  O      |
 /|\     |
